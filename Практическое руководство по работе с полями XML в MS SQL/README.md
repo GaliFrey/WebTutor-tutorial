@@ -942,3 +942,49 @@ GROUP BY code, phone_number -- группируем, чтобы избавить
 **Результат:**
 
 ![taskbook_2](./img/taskbook_3_1.jpg)
+
+### Получаем полный путь до подразделения рекурсивно
+
+**Документ:**
+
+Таблица для примера:
+
+![Таблица для примера](./img/taskbook_4_0.jpg)
+
+**Запрос:**
+
+```sql
+WITH tree   (
+                 name -- Наименование подразделения
+                ,code -- Код подразделения
+                ,level -- уровень подразделения
+                ,pathstr -- строка для сборки иерархии
+            )
+AS (
+    -- Первой таблицей формируем список всех родительских подразделений, код родителя NULL
+    SELECT   name
+        ,code
+        ,0
+        ,CAST(name AS VARCHAR(MAX))
+    FROM  @table
+    WHERE  parent_code IS NULL
+
+    UNION ALL
+
+    SELECT   V.name
+        ,V.code
+        ,t.level + 1
+        ,t.pathstr + '/'+ V.name -- присоединяем следующее подразделение через делиметр
+    FROM  @table V INNER JOIN tree t ON t.code = V.parent_code
+)
+
+SELECT   code
+        ,CAST('<M>' + REPLACE(pathstr, '/', '</M><M>') + '</M>' AS XML) AS pathstrXML -- выводим путь в XML виде для удобства работы с их частями
+        ,pathstr
+        ,level
+FROM    tree
+```
+
+**Результат:**
+
+![taskbook_2](./img/taskbook_4_1.jpg)
