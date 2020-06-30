@@ -144,9 +144,9 @@ DECLARE @sequence_number int = 1;
 
 -- Добавляем аккаунт в профиль
 EXECUTE msdb.dbo.sysmail_add_profileaccount_sp
-    @profile_name = @profile_name,			-- Название профиля	
-    @account_name = @account_name,			-- Название аккаунта
-    @sequence_number = @sequence_number;	-- Порядковый номер аккаунта в профиле
+    @profile_name = @profile_name,          -- Название профиля	
+    @account_name = @account_name,          -- Название аккаунта
+    @sequence_number = @sequence_number;    -- Порядковый номер аккаунта в профиле
 ```
 
 `@sequence_number` - порядковый номер аккаунта в профиле, так как наш профиль новый, то добавляемый аккаунт будет под номером `1`.
@@ -186,11 +186,11 @@ EXECUTE msdb.dbo.sysmail_add_principalprofile_sp
 ```sql
 -- Отправляем email сообщение
 EXEC  msdb.dbo.sp_send_dbmail
-    @Profile_name = 'test_profile',					-- Название профиля
-    @Recipients   = 'vladislav.zagoskin@rt.ru',		-- Адресаты через ;
-    @body = 'Тестовое письмо',						-- Тело письма
-    @body_format = 'TEXT',							-- Формат тела письма
-    @Subject = 'Проверка';							-- Тема письма
+    @Profile_name = 'test_profile',                 -- Название профиля
+    @Recipients   = 'vladislav.zagoskin@rt.ru',     -- Адресаты через ;
+    @body = 'Тестовое письмо',                      -- Тело письма
+    @body_format = 'TEXT',                          -- Формат тела письма
+    @Subject = 'Проверка';                          -- Тема письма
 ```
 ![send_email](./img/send_email.jpg)
 
