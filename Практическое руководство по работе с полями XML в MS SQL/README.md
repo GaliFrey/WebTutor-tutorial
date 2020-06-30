@@ -847,8 +847,6 @@ WHERE   data.value('(collaborator/id)[1]', 'bigint') = 6746470118585096417
 
 **Запрос:**
 ```sql
-DECLARE @sNewMail varchar(100) = 'replaced@mail.ru'
-
 UPDATE  collaborator
 SET     data.modify('replace value of
                     (collaborator/email/text())[1]
@@ -871,7 +869,7 @@ WHERE   data.value('(collaborator/id)[1]', 'bigint') = 6746470118585096417
 **Запрос:**
 ```sql
 SELECT   code -- ключ
-        ,RTrim(LTrim(SUBSTRING(phone_number, 2, 50))) AS phone_number -- обрезаем первичный знакразделителя и удаляем пробелы с концов
+        ,RTrim(LTrim(SUBSTRING(phone_number, 2, 50))) AS phone_number -- обрезаем первичный знак разделителя и удаляем пробелы с концов
 FROM    (
             SELECT   code
                     ,(  SELECT      '; ' + CAST(phone_number AS VARCHAR) -- к каждой строке поиска приписываем разделитель для будущего XML
@@ -892,41 +890,42 @@ GROUP BY code, phone_number -- группируем, чтобы избавить
 
 **Документ:**
 
-Таблица для примера:  
+Предположим, что в нашей системе имеется следующий каталог с подразделениями:  
 ![Таблица для примера](./img/taskbook_4_0.jpg)
+
+В панели администратора это выглядит так:  
+![Таблица для примера](./img/taskbook_4_2.jpg)
 
 **Запрос:**
 ```sql
-WITH tree   (
-                 name -- Наименование подразделения
-                ,code -- Код подразделения
-                ,level -- уровень подразделения
-                ,pathstr -- строка для сборки иерархии
-            )
+WITH tree (  id -- ИД подразделения
+			,name -- Наименование подразделения
+			,pathstr -- строка для сборки иерархии
+          ) 
 AS (
-    -- Первой таблицей формируем список всех родительских подразделений, код родителя NULL
-    SELECT   name
-        ,code
-        ,0
-        ,CAST(name AS VARCHAR(MAX))
-    FROM  @table
-    WHERE  parent_code IS NULL
+	SELECT	 id
+			,name
+			,CAST(name AS VARCHAR(MAX))
+	FROM	subdivisions
+	WHERE	parent_object_id IS NULL
 
-    UNION ALL
+	UNION ALL
 
-    SELECT   V.name
-        ,V.code
-        ,t.level + 1
-        ,t.pathstr + '/'+ V.name -- присоединяем следующее подразделение через делиметр
-    FROM  @table V INNER JOIN tree t ON t.code = V.parent_code
+	SELECT	 S.id
+			,S.name
+			,t.pathstr + '/'+ S.name -- присоединяем следующее подразделение через делиметр
+	FROM	subdivisions S INNER JOIN tree T ON T.id = S.parent_object_id
 )
 
-SELECT   code
-        ,CAST('<M>' + REPLACE(pathstr, '/', '</M><M>') + '</M>' AS XML) AS pathstrXML -- выводим путь в XML виде для удобства работы с их частями
+SELECT   id
         ,pathstr
-        ,level
+        ,CAST('<M>' + REPLACE(pathstr, '/', '</M><M>') + '</M>' AS XML) AS pathstrXML -- выводим путь в XML виде для удобства работы с их частями
 FROM    tree
 ```
 
 **Результат:**  
 ![taskbook_2](./img/taskbook_4_1.jpg)
+
+На рисунке мы получили полный путь до подразделения, составленный из наименований родительских подразделений. Дополнительный столбец `pathstrXML` - это искусственно созданный столбец для удобства последующих работ. Например, чтобы получить список всех дочерних подразделений для `IT отдел`.
+
+
