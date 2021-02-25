@@ -26,16 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="509f3af0-756d-4520-a6be-df89ba8de462" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/agent.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/example.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/fill_storage.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/load_lib.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/result_read.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/zagos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/zagos.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="509f3af0-756d-4520-a6be-df89ba8de462" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +72,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -116,6 +108,7 @@
       <workItem from="1598014068490" duration="435000" />
       <workItem from="1598014512951" duration="5599000" />
       <workItem from="1598020126151" duration="756000" />
+      <workItem from="1614269299897" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="добавил гитигнор">
       <created>1587927374097</created>
