@@ -26,7 +26,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="509f3af0-756d-4520-a6be-df89ba8de462" name="Default Changelist" comment="" />
+    <list default="true" id="509f3af0-756d-4520-a6be-df89ba8de462" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/agent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/example.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/fill_storage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/load_lib.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Отслеживаем и получаем информацию о перезагрузке сервера/img/result_read.jpg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +117,7 @@
       <workItem from="1598014512951" duration="5599000" />
       <workItem from="1598020126151" duration="756000" />
       <workItem from="1614269299897" duration="319000" />
+      <workItem from="1614269679730" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="добавил гитигнор">
       <created>1587927374097</created>
@@ -200,23 +209,5 @@
     <MESSAGE value="Редактирование меню" />
     <MESSAGE value="Добавлен пример для рекурсии" />
     <option name="LAST_COMMIT_MESSAGE" value="Добавлен пример для рекурсии" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1110" y="591" width="1048" height="599" key="#Markdown" timestamp="1598015766659">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1110" y="591" width="1048" height="599" key="#Markdown/0.0.2560.1400/-1440.-607.1440.2520/2560.-607.1440.2520@0.0.2560.1400" timestamp="1598015766659" />
-    <state x="529" y="561" key="#Notifications" timestamp="1593532262169">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="529" y="561" key="#Notifications/0.0.2560.1400/-1440.-607.1440.2520/2560.-607.1440.2520@0.0.2560.1400" timestamp="1593532262169" />
-    <state x="427" y="440" key="FileChooserDialogImpl" timestamp="1598014150222">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="427" y="440" key="FileChooserDialogImpl/0.0.2560.1400/-1440.-607.1440.2520/2560.-607.1440.2520@0.0.2560.1400" timestamp="1598014150222" />
-    <state x="148" y="344" key="SettingsEditor" timestamp="1598014153643">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="148" y="344" key="SettingsEditor/0.0.2560.1400/-1440.-607.1440.2520/2560.-607.1440.2520@0.0.2560.1400" timestamp="1598014153643" />
   </component>
 </project>
