@@ -979,7 +979,7 @@ WITH tree (id, name, parent_object_id, level) AS (
             ,A.name
             ,A.parent_object_id
             ,B.level + 1
-    FROM    subdivisions A INNER JOIN tree B ON B.id = A.parent_object_id
+    FROM    subdivisions A INNER JOIN tree B ON A.id = B.parent_object_id
 ) 
 
 SELECT  A.*
